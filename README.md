@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-You can use the [link](https://maheepchaudhary.github.io/maheep.github.io/d) to preview the content of my portfolio .
+You can use the [link](https://maheepchaudhary.github.io/maheep.github.io/) to preview the content of my portfolio .
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
