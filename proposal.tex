@@ -1,0 +1,40 @@
+
+\textbf{Dataset:} Below are the potential datasets that could be used for our model:
+\begin{itemize}
+    \item $[$HELMET Dataset$]$ 
+     \footnote{\url{https://osf.io/4pwj8/}} : Contains 910 annotated video clips, each video clip has 100 frames (10 second x 10 fps) with 1920 x 1080 resolution. In each annotation file, track\_id corresponds to the unique tracking id of a motorcycle, frame\_id corresponds to the frame number (1 to 100) it appears, and with a bounding box (x, y, width, height) and annotated helmet use class. \mc{It does not contain the metric to evaluate the helmet detection; contains for classification and not detection}
+    
+    \item $[$Kaggle Helmet Dataset$]$\footnote{\url{https://www.kaggle.com/datasets/andrewmvd/helmet-detection}}:  This dataset contains 764 images of 2 distinct classes for the objective of helmet detection. Bounding box annotations are provided in the PASCAL VOC format. The classes are \textit{``With helmet''; ``Without helmet''.} \mc{This contains detection problem and not classifying as the HELMET Dataset. However, the images are very less for a 
+    research paper.}
+
+    \item $[$Preffered$]$: This\footnote{\url{https://sites.google.com/site/dineshsinghindian/dataset}} can be the viable source for the dataset. However, we will have to send the mail to Prof. who is the  author of this dataset. 
+
+    \item $[$NOT Preffered$]$:   This\footnote{\url{https://github.com/RajaSudalai/Motorcyclist_Helmet_Detection}} again has very few images-123 in the dataset.  
+
+    \item $[$Safety Helmet Prediction Dataset$]$\footnote{\url{https://github.com/njvisionpower/Safety-Helmet-Wearing-Dataset}}: This has the images of the construction workers. Therefore, I don't think it will be of much use. 
+
+    \item $[$Safety Helmet Wearing Dataset$]$\footnote{\url{https://data.mendeley.com/datasets/9rcv8mm682/1}}: We extended the number of labels in Kaggle’s safety helmet detection dataset, which has 5000 images and 5000 annotations. The original dataset had three classes (person, head and helmet) and a total of 2501 labels. Moreover, the original dataset was incompletely labelled. We added three new labels on the dataset in results, the new labels consists of six classes (helmet, head with helmet, person with helmet, head, person no helmet, and face) and total of 75578 labels. \mc{This can act as a viable source for us.} 
+
+    \item $[$Bike Helmet Detection Dataset$]$\footnote{\url{https://universe.roboflow.com/bike-helmets/bike-helmet-detection-2vdjo/dataset/2}}: This can also act as a viable source for us. \mch{Please explore it as I was not able to explore it much}
+    
+\end{itemize}
+
+
+\textbf{Evaluation and Experimental Section:} Some of the things to evaluate our system:-
+\begin{enumerate}
+    \item Yolov5 training graphs for ``\textit{Accuracy vs Epoch }''
+    \item Yolov5 training graph for \textit{``Loss vs Epoch''}
+    \item We can also evaluate based on ensembling the model by taking: ``\textit{Trained Yolo Model[1]}''; ``\textit{Raw Yolo Model[2]}''; 
+    ``\textit{Algorithm and Trained Yolov5 model[2+1]}''; and 
+    ``\textit{Algorithm and Raw Yolov5 model[3+2]}'' as given in the image \ref{fig: eval_ensemble}. So as to have the performance discrepancy we can use mixup \citet{https://doi.org/10.48550/arxiv.1710.09412} to augment so as to boost the algorithm based on the aspect of robustness.
+    \item Only the active motorcycles should be included; the ones having the person on top. 
+    \item For different hyperparameters the graph or table should be shown of Yolov5. \mch{Please clear it}.
+\end{enumerate}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 15cm]{images/eval.png}
+    \caption{Ensemble Evaluation Image \citet*{Shine2020AutomatedDO}}
+    \label{fig: eval_ensemble}
+\end{figure}
